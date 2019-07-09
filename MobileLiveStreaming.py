@@ -3,7 +3,7 @@ import numpy
 import cv2
 
 while True:
-    url="http://25.110.108.26:8080/shot.jpg"
+    url="http://mobileIp/shot.jpg"
     data=requests.get(url)
     photo=data.content
     myphoto=bytearray(photo)
