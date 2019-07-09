@@ -53,7 +53,7 @@ if location=="local":
 	elif int(ch)==5:
 		sp.getoutput("python36 /root/Desktop/python_codes/photo.py")	
 	elif int(ch)==6:
-		sp.getoutput("docker run -it --name docker1 -v /root/rhel7_5_rpm_extras/:/extra1 -v /root/rhel7_extra_new_rpm/:/extra2 -v /root/python_lib/:/python_lib -v /run/media/root/RHEL-7.5\ Server.x86_64/:/dvd centos:latest")
+		sp.getoutput("docker run -it --name docker1 centos:latest")
 	elif int(ch)==7:
 		exit()
 	else:
@@ -86,26 +86,25 @@ elif location=="remote":
 elif location=="AWS":
 	
 	if int(ch)==1:
-		print(sp.getoutput("ssh -l ec2-user {} -i /root/Desktop/batch9maykey.pem date".format(AWS_ip)))
+		print(sp.getoutput("ssh -l ec2-user {} -i your_key_name date".format(AWS_ip)))
 	elif int(ch)==2:
-		print(sp.getoutput("ssh -l ec2-user {} -i /root/Desktop/batch9maykey.pem cal".format(AWS_ip)))
+		print(sp.getoutput("ssh -l ec2-user {} -i your_key_name cal".format(AWS_ip)))
 	elif int(ch)==3:
 		print("Enter name of user:",end='')	
 		user_name=input()
-		sp.getoutput("ssh -l ec2-user {} -i /root/Desktop/batch9maykey.pem useradd {}".format(AWS_ip,user_name))
+		sp.getoutput("ssh -l ec2-user {} -i your_key_name useradd {}".format(AWS_ip,user_name))
 	
 		print("User {} created successfully".format(user_name))
 	elif int(ch)==4:
 		print("Enter file name:",end='')	
 		file_name=input()
-		sp.getoutput("ssh -l ec2-user {} -i /root/Desktop/batch9maykey.pem touch {}".format(AWS_ip,file_name))
+		sp.getoutput("ssh -l ec2-user {} -i your_key_name touch {}".format(AWS_ip,file_name))
 		print("file {} created successfully".format(file_name))
 #	elif int(ch)==5:						
 #		sp.getoutput("scp /root/Desktop/python_codes/photo.py {}:/root/Desktop".format(AWS_ip))
 #		sp.getoutput("ssh {} python36 /root/Desktop/photo.py".format(AWS_ip))
 #		sp.getoutput("scp {}:/root/image.png /root/Desktop/images".format(AWS_ip))
-	elif int(ch)==6:
-		exit()
+	
 	else:
 		print("Not supported")
 
