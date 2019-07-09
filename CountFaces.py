@@ -5,7 +5,7 @@
 import cv2
 
 x=cv2.VideoCapture(0)
-face=cv2.CascadeClassifier("/root/Desktop/haarcascade_frontalface_default.xml")
+face=cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
 while True:
     ret,pic=x.read()
@@ -22,5 +22,5 @@ while True:
             break
 cv2.destroyAllWindows()
 x.release()
-print(len(co))
+print("Number of faces=" + len(co))
 
