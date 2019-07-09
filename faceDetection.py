@@ -1,26 +1,9 @@
 
-# coding: utf-8
-
-# In[1]:
-
-
 import cv2
-
-
-# In[2]:
-
 
 cap=cv2.VideoCapture(0)
 
-
-# In[3]:
-
-
 face_model=cv2.CascadeClassifier('/root/Desktop/haarcascade_frontalface_default.xml')
-
-
-# In[4]:
-
 
 while True :
     ret,photo=cap.read()
